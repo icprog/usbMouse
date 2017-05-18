@@ -35,3 +35,6 @@ CROSS_COMPILER_TARGET_ARCHS =
 # Uncomment and modify as required to find your libusb-1.0 stuff
 #USR_CFLAGS += -I/usr/local/include
 #USR_LDFLAGS += -L/usr/local/lib
+USR_CFLAGS  += `pkg-config --cflags libusb-1.0`
+USR_LDFLAGS += `pkg-config --libs libusb-1.0`
+PROD_LDLIBS += `pkg-config --libs libusb-1.0`

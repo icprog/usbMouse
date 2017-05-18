@@ -16,6 +16,8 @@ epicsEnvSet(PORT, "M0")
 # Bus 001 Device 018: ID 03f0:1198 Hewlett-Packard
 
 
+
+
 epicsEnvSet(VENDOR, "$(VENDOR=0x03F0)")
 epicsEnvSet(PRODUCT, "$(PRODUCT=0x1198)")
 
