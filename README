@@ -1,0 +1,18 @@
+This code is the result of a Tech-Talk posting from Miroslav Mihaylov at
+the University of Chicago who wanted to add a simple hardware switch to
+an EPICS soft IOC.  I suggested using a USB mouse with the switch wired
+across one of the buttons.
+
+The code is very preliminary.  I'd be happy to hear suggestions from someone with USB/HID expertise.
+
+As the Wikipedia page on HID says:
+    The USB HID API is complicated and can be difficult to
+    understand. Despite the complexity, developers who wish
+    to do basic things with the API need only learn a small
+    portion of it. The primary challenge in learning the API
+    lies in determining which parts one needs to use.
+        http://en.wikipedia.org/wiki/USB_human_interface_device_class
+
+Eric Norum
+Lawrence Berkeley National Laboratory
+July 12th, 2011

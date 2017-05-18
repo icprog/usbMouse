@@ -1,0 +1,8 @@
+## configure/RELEASE: Location of external products
+
+# Run "gnumake clean uninstall install" in the application top
+# directory whenever this file is changed or any external module
+# pointed to by this RELEASE file is rebuilt.
+
+ASYN       = /usr/local/epics/R3.14.12/modules/soft/synApps_5_5/support/asyn4-16
+EPICS_BASE = /usr/local/epics/R3.14.12/base

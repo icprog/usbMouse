@@ -1,0 +1,55 @@
+##########################################################################
+# Copyright (c) 2011 Lawrence Berkeley National Laboratory,
+# Accelerator Technology Group, Engineering Division
+# This code is distributed subject to a Software License Agreement found
+# in file LICENSE.txt that is included with this distribution.
+##########################################################################
+
+record(bi, "$(P)$(R)B0")
+{
+    field(DESC, "USB Mouse button 0")
+    field(DTYP, "asynInt32")
+    field(SCAN, "I/O Intr")
+    field(INP,  "@asyn($(PORT) 0 0)")
+    field(ZNAM, "Off")
+    field(ONAM, "On")
+}
+record(bi, "$(P)$(R)B1")
+{
+    field(DESC, "USB Mouse button 1")
+    field(DTYP, "asynInt32")
+    field(SCAN, "I/O Intr")
+    field(INP,  "@asyn($(PORT) 1 0)")
+    field(ZNAM, "Off")
+    field(ONAM, "On")
+}
+record(bi, "$(P)$(R)B2")
+{
+    field(DESC, "USB Mouse button 2")
+    field(DTYP, "asynInt32")
+    field(SCAN, "I/O Intr")
+    field(INP,  "@asyn($(PORT) 2 0)")
+    field(ZNAM, "Off")
+    field(ONAM, "On")
+}
+record(longin, "$(P)$(R)X")
+{
+    field(DESC, "USB Mouse X position")
+    field(DTYP, "asynInt32")
+    field(SCAN, "I/O Intr")
+    field(INP,  "@asyn($(PORT) 10 0)")
+}
+record(longin, "$(P)$(R)Y")
+{
+    field(DESC, "USB Mouse Y position")
+    field(DTYP, "asynInt32")
+    field(SCAN, "I/O Intr")
+    field(INP,  "@asyn($(PORT) 11 0)")
+}
+record(longin, "$(P)$(R)Wheel")
+{
+    field(DESC, "USB Mouse scroll wheel")
+    field(DTYP, "asynInt32")
+    field(SCAN, "I/O Intr")
+    field(INP,  "@asyn($(PORT) 12 0)")
+}

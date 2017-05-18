@@ -1,0 +1,91 @@
+<!--?xml version="1.0" encoding="iso-8859-1"?-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;
+      charset=ISO-8859-1">
+    <title>usbMouse Instrument Support</title>
+    <meta name="generator" content="amaya 8.5, see
+      http://www.w3.org/Amaya/">
+  </head>
+  <body>
+    <h1>Using USB Mouse support in an application</h1>
+    <p>This support module uses the libusb-1.0 library to read data from
+      a USB mouse.&nbsp; Several files need minor modifications to use
+      this support in an application:<br>
+    </p>
+    <ol>
+      <li>Add the full path to the USB Mouse support directory to the
+        application <tt>configure/RELEASE</tt> file:<br>
+        <tt>USBMOUSE=</tt><em>xxxx</em><tt>/modules/instrument/usbMouse/&lt;release&gt;</tt><br>
+        Where <tt>&lt;release&gt;</tt> is the release number of of the
+        USB mouse support.</li>
+      <li>Add instrument support to application database definition file<br>
+        The application database definition file must include the
+        database definition files for the USB mouse support. There are
+        two ways that this can be done:
+        <ul>
+          <li>If you are building your application database definition
+            file from an <em>xxx</em><tt>Include.dbd</tt> file you
+            include the additional database definitions in that file:<br>
+            <tt>include "base.dbd"</tt><br>
+            <tt>include "usbMouse.dbd"</tt><br>
+          </li>
+          <li>If you are building your application database definition
+            file from the application Makefile you specify the aditional
+            database definitions there:<br>
+            <em>xxx</em><tt>_DBD += base.dbd</tt><br>
+            <em>xxx</em><tt>_DBD += usbMouse.dbd</tt><em></em><br>
+          </li>
+        </ul>
+      </li>
+      <li>Add the USB mouse support libraries to the application<br>
+        You must link the USB mouse support library, the ASYN support
+        library and the libusb-1.0 library with the application. Add the
+        following lines: <br>
+        <em>xxx</em><tt>_LIBS += usbMouse</tt><br>
+        <em>xxx</em><tt>_LIBS += asyn<br>
+          USR_SYS_LIBS += usb-1.0</tt><br>
+        before the <br>
+        <em>xxx</em><tt>_LIBS += $(EPICS_BASE_IOC_LIBS)</tt><br>
+        in the application Makefile.</li>
+      <li>Configure the USB mouse in the application startup script:<br>
+        <tt>usbMouseConfigure(&lt;PORT&gt;, &lt;vendor ID&gt;,
+          &lt;product ID&gt;, &lt;interface number&gt;, &lt;poll
+          interval (ms)&gt;, &lt;priority&gt;)</tt><br>
+        The default interface number is 0, the default poll interval is
+        the value provided by the device itself and the default priority
+        is epicsThreadMedium.<br>
+      </li>
+      <li>Load the USB mouse support database records in the application
+        startup script:<br>
+        <tt>cd $(USBMOUSE)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt>(<tt>cd
+
+          USBMOUSE</tt> if using the vxWorks shell)<br>
+        <tt>dbLoadRecords("db/usbMouse.db,"P=</tt><em>&lt;P&gt;</em><tt>,R=</tt><em>&lt;R&gt;</em><tt>,PORT=</tt><em>&lt;PORT&gt;</em><em></em><tt>")</tt><br>
+        You'll have to provide appropriate values for the PV name
+        prefixes (<em>&lt;P&gt;</em> and <em>&lt;R&gt;</em>) and the
+        ASYN port name (<em>&lt;PORT&gt;</em>)<em></em>. The port name
+        must match the value specified in a startup script <em></em><tt>usbMouseConfigure</tt>
+        command. </li>
+    </ol>
+    <h1>Installation and Building</h1>
+    After obtaining a copy of the distribution, it must be installed and
+    built for use at your site.
+    <ol>
+      <li>Create an installation directory for the module. The path name
+        of this directory should end with <tt>modules/instrument/usbmouse</tt>.</li>
+      <li>Place the distribution file into this directory.</li>
+      <li>Execute the following commands:<br>
+        <tt>cd modules/instrument/usbMouse</tt><br>
+        <tt>gunzip usbMouse&lt;release&gt;.tar.gz</tt><br>
+        <tt>tar xvf usbMouse&lt;release&gt;.tar</tt><br>
+        <tt>cd &lt;release&gt;</tt><br>
+        Where <tt>&lt;release&gt;</tt> is the release number of of the
+        USB mouse support. </li>
+      <li>Edit the <tt>configure/RELEASE</tt> file and set the paths to
+        your installation of EPICS base and ASYN.</li>
+      <li>Execute <tt>make</tt> in the top level directory.</li>
+    </ol>
+  </body>
+</html>

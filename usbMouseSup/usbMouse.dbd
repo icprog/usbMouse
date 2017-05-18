@@ -1,0 +1,2 @@
+registrar("usbMouseSup_RegisterCommands")
+include "asyn.dbd"

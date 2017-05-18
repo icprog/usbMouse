@@ -1,0 +1,121 @@
+2011-07-21 16:04  tag R0-3
+
+2011-07-21 16:04  wenorum
+
+	* usbMouseSup/usbMouse.c: Make sure short version compiles, too.
+
+2011-07-21 16:02  wenorum
+
+	* usbMouseSup/usbMouse.c: Make it clear which routines are just to
+	  demonstrate how to get HID information.
+
+2011-07-13 09:11  wenorum
+
+	* usbMouseSup/usbMouse.c: Report all endpoints.
+
+2011-07-13 09:05  wenorum
+
+	* usbMouseSup/usbMouse.c: Improve formatting of HID report.  Add
+	  endpoint report.
+
+2011-07-12 21:51  wenorum
+
+	* usbMouseSup/usbMouse.c: Only need one sign-extend mechanism.
+
+2011-07-12 21:11  wenorum
+
+	* usbMouseSup/usbMouse.c: Cleanup.
+
+2011-07-12 21:10  wenorum
+
+	* README: Update README notes.
+
+2011-07-12 14:55  tag R0-2
+
+2011-07-12 14:55  wenorum
+
+	* documentation/devusbMouse.html, iocBoot/iocusbMouseTest/st.cmd,
+	  usbMouseSup/usbMouse.c: Add HID readback.  Allow device to set
+	  polling rate.
+
+2011-07-11 19:27  wenorum
+
+	* usbMouseSup/usbMouse.c: Clean up code.
+
+2011-07-11 19:10  wenorum
+
+	* iocBoot/iocusbMouseTest/st.cmd, usbMouseSup/usbMouse.c: Add
+	  option to get delay from device.
+
+2011-07-11 16:05  wenorum
+
+	* usbMouseSup/usbMouse.c: Add some move USB commands.	Get
+	  information strings and show them.
+
+2011-07-08 09:37  wenorum
+
+	* usbMouseSup/usbMouse.c: Ensure that initial values get sent.
+
+2011-07-08 09:33  wenorum
+
+	* README, iocBoot/iocusbMouseTest/st.cmd: Allow VENDOR and PRODUCT
+	  to be set from the environment rather than requiring explicit
+	  editing of the startup script.
+
+2011-07-08 08:49  tag R0-1
+
+2011-07-08 08:49  wenorum
+
+	* README, usbMouseSup/usbMouse.c, usbMouseSup/usbMouse.db: Make
+	  buttons binary-in.  Don't process record unless value has
+	  changed.
+
+2011-07-07 16:16  wenorum
+
+	* usbMouseSup/usbMouse.c: Fix typo -- shows up on case-sensitive
+	  file systems.
+
+2011-07-07 16:15  wenorum
+
+	* configure/CONFIG_SITE: Add notes for finding libusb-1.0 stuff.
+	  Don't build cross-targets.
+
+2011-07-07 15:02  wenorum
+
+	* documentation/devusbMouse.html: Add note about libusb-1.0.
+
+2011-07-07 14:57  wenorum
+
+	* iocBoot/iocusbMouseTest/st.cmd: Add another device.
+
+2011-07-07 14:36  tag NL
+
+2011-07-07 14:36  tag development
+
+2011-07-07 14:36  wenorum
+
+	* LICENSE.txt, Makefile, configure/CONFIG, configure/CONFIG_SITE,
+	  configure/Makefile, configure/RELEASE, configure/RULES,
+	  configure/RULES.ioc, configure/RULES_DIRS, configure/RULES_TOP,
+	  documentation/devusbMouse.html, iocBoot/Makefile,
+	  iocBoot/iocusbMouseTest/Makefile, iocBoot/iocusbMouseTest/st.cmd,
+	  usbMouseSup/Makefile, usbMouseSup/usbMouse.c,
+	  usbMouseSup/usbMouse.db, usbMouseSup/usbMouse.dbd,
+	  usbMouseTestApp/Makefile, usbMouseTestApp/Db/Makefile,
+	  usbMouseTestApp/src/Makefile,
+	  usbMouseTestApp/src/usbMouseTestMain.cpp: Initial revision
+
+2011-07-07 14:36  wenorum
+
+	* LICENSE.txt, Makefile, configure/CONFIG, configure/CONFIG_SITE,
+	  configure/Makefile, configure/RELEASE, configure/RULES,
+	  configure/RULES.ioc, configure/RULES_DIRS, configure/RULES_TOP,
+	  documentation/devusbMouse.html, iocBoot/Makefile,
+	  iocBoot/iocusbMouseTest/Makefile, iocBoot/iocusbMouseTest/st.cmd,
+	  usbMouseSup/Makefile, usbMouseSup/usbMouse.c,
+	  usbMouseSup/usbMouse.db, usbMouseSup/usbMouse.dbd,
+	  usbMouseTestApp/Makefile, usbMouseTestApp/Db/Makefile,
+	  usbMouseTestApp/src/Makefile,
+	  usbMouseTestApp/src/usbMouseTestMain.cpp: New support module.
+	  Shows how to read from a simple USB device.
+
