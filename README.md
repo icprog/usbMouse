@@ -10,6 +10,11 @@ to execute an IOC.
 
 Please look at [the original README](README) also.
 
+## References
+* http://www.aps.anl.gov/epics/tech-talk/2011/msg01210.php
+* http://www.aps.anl.gov/epics/tech-talk/2011/msg01325.php
+
+
 ```
 Jeong Han Lee
 European Spallation Source, Lund, Sweden
