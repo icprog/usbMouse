@@ -1,4 +1,4 @@
-#!../../bin/darwin-x86/usbMouseTest
+#!../../bin/linux-x86_64/usbMouseTest
 
 
 #############################################################################
@@ -11,8 +11,15 @@ epicsEnvSet(PORT, "M0")
 # Allow environment to override default vendor/product codes
 # The default values of 046D:C019 are for a Logitech optical tilt-wheel mouse
 # Values of 045E:0039 are, for example, a Microsoft 5-button optical mouse
-epicsEnvSet(VENDOR, "$(VENDOR=0x046D)")
-epicsEnvSet(PRODUCT, "$(PRODUCT=0xC019)")
+
+#jhlee@kaffee: iocusbMouseTest (master)$ lsusb
+# Bus 001 Device 018: ID 03f0:1198 Hewlett-Packard
+
+
+epicsEnvSet(VENDOR, "$(VENDOR=0x03F0)")
+epicsEnvSet(PRODUCT, "$(PRODUCT=0x1198)")
+
+
 
 cd "$(TOP)"
 
